@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Table, TableBody, TableContainer, TableHead, TableRow, TableCell, Box, Typography } from "@mui/material";
 import {User} from "./@types/types";
-import { styled } from '@mui/material/styles';
+
+
 
 const App = (props: any) => {
 	const [users, setUsers] = useState<User[	]>([]);
@@ -12,7 +13,18 @@ const App = (props: any) => {
 			.then((response) => response.json())
 			.then((json) => {setUsers(json); setLoading(false)});
 	});
-
+	/*useEffect(() => {
+		fetch("https://jsonplaceholder.typicode.com/users/ID_DO_USUARIO/todos")
+			.then((response) => response.json())
+			.then((json) => {setUsers(json); setLoading(false)});
+	});
+	useEffect(() => {
+		fetch("https://jsonplaceholder.typicode.com/users/ID_DO_USUARIO/posts")
+			.then((response) => response.json())
+			.then((json) => {setUsers(json); setLoading(false)});
+	});
+  */
+	
 	return (
 		<Box className="App">
 			<Typography variant="h3" sx={{textAlign: "center",}} >Lista de usuários</Typography>
@@ -35,7 +47,9 @@ const App = (props: any) => {
 				</TableContainer>
 			</Box>
 		</Box>
+		
 	);
 };
+
 
 export default App;
