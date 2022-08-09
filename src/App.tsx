@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import AppNavBar from "./components/AppNavBarComponent";
 import TelaListaTarefas from "./pages/TelaTarefas";
 import TelaListaUsuarios from "./pages/TelaUsuarios";
+import TelaLogin from "./pages/TelaLogin";
 
 const App = (props: any) => {
 	const [users, setUsers] = useState([
@@ -11,10 +12,11 @@ const App = (props: any) => {
 		{ id: 2, name: "" },
 	]);
 	const [loading, setLoading] = useState(true);
-	const [tela, setTela] = useState(1);
+	const [tela, setTela] = useState(2);
 	const telas = [
 		<TelaListaUsuarios data={users} loading={loading} />,
 		<TelaListaTarefas user={ {id: 2, name: "Ervin Howell"} } />,
+		
 	];
 
   const handleMudancaTela = (index: number) => {

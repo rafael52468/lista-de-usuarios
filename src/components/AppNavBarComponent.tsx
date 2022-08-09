@@ -22,6 +22,7 @@ const AppNavBar = (props: any) => {
 				</IconButton>
         <Button color="inherit" onClick={() => props.onChangeScreen(0)}>Usuários</Button>
 				<Button color="inherit" onClick={() => props.onChangeScreen(1)}>Tarefas</Button>
+				<Button color="inherit" onClick={() => props.onChangeScreen(2)}>Login</Button>
 			</Toolbar>
 		</AppBar>
 	);
