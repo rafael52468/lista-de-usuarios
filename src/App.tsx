@@ -1,10 +1,13 @@
 import { Container, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
-import AppNavBar from "./components/AppNavBarComponent";
+import AppRoutes from "./AppRoutes";
 import TelaListaTarefas from "./pages/TelaTarefas";
 import TelaListaUsuarios from "./pages/TelaUsuarios";
-import TelaLogin from "./pages/TelaLogin";
+import TelaLogin from "./pages/LoginPage/TelaLogin";
+import AppNavBar from "./components/AppNavBarComponent";
+
+
 
 const App = (props: any) => {
 	const [users, setUsers] = useState([
@@ -15,8 +18,8 @@ const App = (props: any) => {
 	const [tela, setTela] = useState(2);
 	const telas = [
 		<TelaListaUsuarios data={users} loading={loading} />,
-		<TelaListaTarefas user={ {id: 2, name: "Ervin Howell"} } />,
-		
+		<TelaListaTarefas user={ {id: 2} } />,
+		<TelaLogin />
 	];
 
   const handleMudancaTela = (index: number) => {
@@ -36,6 +39,7 @@ const App = (props: any) => {
 			<AppNavBar onChangeScreen={handleMudancaTela} />
 			{telas[tela]}
 		</Container>
+			
 	);
 };
 
